@@ -1,0 +1,13 @@
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/linux_desktop_test
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/icudtl.dat
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/shaders/stretch_effect.frag
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/NativeAssetsManifest.json
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/tmp/linux_desktop_test/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
