@@ -1,0 +1,52 @@
+config BR2_PACKAGE_NVIDIA_580
+	bool "nvidia-580"
+	depends on BR2_i386 || BR2_x86_64
+	depends on BR2_TOOLCHAIN_USES_GLIBC
+	select BR2_PACKAGE_LIBGLVND
+	select BR2_PACKAGE_MESA3D
+	help
+	  Proprietary NVIDIA graphics driver (version 550.120).
+	  Includes support for Wayland, Vulkan, EGL, and DRM modesetting.
+
+if BR2_PACKAGE_NVIDIA_580
+
+config BR2_PACKAGE_NVIDIA_580_XORG
+	bool "Install Graphics Libraries (EGL/Vulkan/GLX)"
+	default y
+	help
+	  Installs the core GUI libraries required for rendering.
+	  Even for a pure Wayland environment, this must be enabled as it 
+	  installs the EGL, Vulkan, GBM, and GLX bridges required by wlroots.
+
+config BR2_PACKAGE_NVIDIA_580_PRIVATE_LIBS
+	bool "Install private libraries (FBC)"
+
+config BR2_PACKAGE_NVIDIA_580_CUDA
+	bool "CUDA support"
+
+config BR2_PACKAGE_NVIDIA_580_CUDA_PROGS
+	bool "CUDA programs (mps-control, mps-server)"
+	depends on BR2_PACKAGE_NVIDIA_580_CUDA
+
+config BR2_PACKAGE_NVIDIA_580_OPENCL
+	bool "OpenCL support"
+	select BR2_PACKAGE_HAS_LIBOPENCL
+
+config BR2_PACKAGE_NVIDIA_580_MODULE
+	bool "Build kernel modules"
+	depends on BR2_LINUX_KERNEL
+	default y
+	help
+	  Builds the proprietary NVIDIA kernel modules:
+	  nvidia, nvidia-modeset, nvidia-drm, and nvidia-uvm.
+	  
+	  REQUIRED for hardware acceleration in Wayland/Sway.
+
+comment "nvidia-580 kernel modules require a linux kernel to be built"
+	depends on !BR2_LINUX_KERNEL
+
+endif # BR2_PACKAGE_NVIDIA_580
+
+comment "nvidia-580 needs a glibc toolchain"
+	depends on BR2_i386 || BR2_x86_64
+	depends on !BR2_TOOLCHAIN_USES_GLIBC
